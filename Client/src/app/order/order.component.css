@@ -1,0 +1,81 @@
+#orderHeader{
+    padding-top:3%;
+    padding-left: 3%;
+}
+
+#orderHeaderTitle{
+    font-family: 'Acme', sans-serif;
+    font-size: 40px;
+}
+
+#orderNavBarDiv{
+    padding-left: 3%;
+    padding-right: 3%;
+    
+}
+
+#navBarForOrder{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #FFD700;
+}
+
+#buttonInsideNavBar{
+    display: flex;
+    justify-content: center;
+}
+
+#addbutton{
+    display: flex;
+    justify-content: end;
+}
+
+#navBarItems{
+    padding-top:0.5%;
+    padding-bottom:0.5%;
+}
+#UserToLoginEmoji{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    
+}
+
+#warningContent{
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+}
+#warningButton{
+    display: flex;
+    justify-content: center;
+}
+
+#logintxt{
+    position: relative;
+}
+
+#logintxt::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 3px solid red;
+}
+@media screen and (max-width : 800px)
+{
+    #orderHeaderTitle{
+        font-family: 'Acme', sans-serif;
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width : 1800px)
+{
+    #orderHeaderTitle{
+        font-family: 'Acme', sans-serif;
+        font-size: 55px;
+    }
+}

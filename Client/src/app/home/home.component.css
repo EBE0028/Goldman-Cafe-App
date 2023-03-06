@@ -1,0 +1,241 @@
+#categoryPortion{
+    padding-top:1%;
+    padding-left: 3%;
+}
+
+#categoryTitle{
+    font-family: 'Signika Negative', sans-serif;
+    font-size: xx-large;
+}
+
+#categoryImg{
+    border-radius: 50% ;
+    width:100px;
+    padding:3%;
+    cursor: pointer;
+}
+
+#CategoryList{
+    padding-top:1%;
+    position: realtive;
+    margin-left: 3vw;
+}
+
+#categoryProduct{
+    padding-right: 15%;
+}
+
+#categorySubHead{
+    text-align: center;
+    color:#212529;
+    font-weight: 500;
+    margin-top: 1vw;
+    margin-left: 1.4vw;
+}
+
+#recommendProduct{
+    background-color: #FFD700;
+}
+
+#recommendProductTitle{
+ color:aliceblue;
+ font-family: 'Signika Negative', sans-serif;
+ font-size: xx-large;
+ padding-top: 0.5%;
+ padding-left: 3%;
+}
+
+#recommendedImg{
+    height: 250px;
+    margin-top: 1.2vw;
+    margin-right: 4.5em;
+    border-radius: 4%;
+}
+
+#recommendedinfdiv{
+ margin-right:-13vw;
+}
+
+#recommenddetailscenter{
+    padding-left:10%;
+}
+
+#recominfo{
+    margin-top: 3vw;
+}
+
+#companyContent{
+    font-size: 14px;
+    font-family:'Signika Negative', sans-serif;
+}
+
+#RecProductName{
+    font-size: 45px;
+    font-family: 'Acme', sans-serif;
+    margin-bottom: 0.2vw;
+}
+
+#RecProductPrice{
+    padding-top: 3%;
+    font-size: 17px;
+    font-family: 'Acme', sans-serif;
+}
+
+#footer{
+    background-color: #FFD700;
+}
+
+#socialMedia{
+    padding: 2%;
+}
+#footercenter{
+    padding-left:15%
+}
+#contactDetailsHeader {
+    font-family: 'Acme', sans-serif;
+}
+#contactContent{
+    font-family: 'Acme', sans-serif;
+}
+
+.aboutUs{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Phudu', cursive;
+}
+
+#underlineTxt{
+    position: relative;
+}
+
+#underlineTxt::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 3px solid red;
+}
+
+
+.homeSession{
+   margin-bottom: -1.5em;
+}
+@media screen and (max-width : 800px)
+{
+  #categoryTitle
+  {
+    font-size: large;
+  }
+  #CategoryList{
+    padding:25%;
+    padding-top: 1%;
+  }
+  #categorySubHead{
+    margin-left: -15vw;
+    color:#212529;
+    font-weight: 500;
+  }
+  #recommendedImg{
+    height: 100px;
+    margin-top: 1.2vw;
+    border-radius: 4%;
+  }
+  #RecProductName{
+    font-size: 18px;
+    font-family: 'Acme', sans-serif;
+    margin-bottom: -2vw;
+    }
+
+    #RecProductPrice{
+        padding-top: 1%;
+        font-size: 10px;
+        font-family: 'Acme', sans-serif;
+    }
+    #companyContent{
+        font-size: 10px;
+        font-family:'Signika Negative', sans-serif;
+    }
+    #companycard{
+        width:50%;
+    }
+    #recommenddetailscenter{
+        padding-left:1%;
+    }
+    #recommendedinfdiv{
+        padding-left:20%
+    }
+    #recommendedinfo{
+        padding-left: 20%;
+    }
+}
+
+@media screen and (min-width : 1800px)
+{
+    #CategoryList{
+        width: 100%;
+        position: relative;
+        padding-top: 1%;
+        margin-left: 15vw;
+        margin-right: auto;
+    }
+
+    #categoryTitle{
+        margin-left: 15vw;
+    }
+
+    #categorySubHead{
+        text-align: center;
+        color:#212529;
+        font-weight: 500;
+        margin-top: 1vw;
+        margin-left: 2.2vw;
+    }
+
+    #recommendedImg{
+        height: 400px;
+        margin-top: 1.2vw;
+        border-radius: 4%;
+    }
+      #RecProductName{
+        font-size: 50px;
+        padding-bottom: 12%;
+        font-family: 'Acme', sans-serif;
+        margin-bottom: -2vw;
+        }
+    
+        #RecProductPrice{
+            padding-top: 5%;
+            padding-bottom: 5%;
+            font-size: 30px;
+            font-family: 'Acme', sans-serif;
+        }
+        #companyContent{
+            font-size: 25px;
+            font-family:'Signika Negative', sans-serif;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1;
+        }
+        #companycard{
+            width:600px;
+        }
+        #recommenddetailscenter{
+            padding-right:20%;
+        }
+        #recommendedinfdiv{
+            padding-right:20%;    
+        }
+        #recommendedinfo{
+           margin-left: 10vw;
+           padding-left: 10%;
+        }
+
+        #recommendProduct{
+            padding-top:2%;
+            padding-bottom: 2%;
+        }
+}

@@ -1,0 +1,19 @@
+<div>
+    <h2 mat-dialog-title style="font-family: 'Alegreya Sans', sans-serif;font-weight: bold;text-align: center;">Please conform</h2>
+    <div mat-dialog-content style="display: flex;justify-content: center;">
+        <form [formGroup]="myForm">
+            <mat-form-field>
+              <input matInput formControlName="name" placeholder="Name" [(ngModel)]="loginName">
+              <mat-error *ngIf="myForm.get('name')">Name is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput formControlName="id" placeholder="ID" [(ngModel)]="userID">
+              <mat-error *ngIf="myForm.get('id')">ID is required</mat-error>
+            </mat-form-field>
+            <div mat-dialog-actions>
+                <button mat-button (click)="onCancel()">Cancel</button>
+                <button mat-button type="submit" [disabled]="!myForm.valid" (click)="onSubmit()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

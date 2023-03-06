@@ -1,0 +1,63 @@
+<div  id="orderHistory">
+    <br>
+    <div>
+        <h2 id="orderHeaderTitle"> My Order History </h2>       
+    </div>
+    <br>
+    <div *ngIf="orderPresent == true else makeTheUserToOrder">
+        <div *ngFor = "let item of listOfOrdersHistory;">
+            <mat-card>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6" id="headerOrder">
+                            <mat-card-title style="padding-left: 1%;font-family: 'Acme', sans-serif;">Order number : {{item.OrderID}}</mat-card-title>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6" id="headerOrder">
+                            <mat-card-title style="padding-left: 1%;font-family: 'Acme', sans-serif;">Date: {{item.Date}}</mat-card-title>
+                        </div>
+                    </div>
+                </div>
+                <mat-card-content>
+                    <div>
+                        <table class="table table-striped table-dark">
+                            <thead>
+                              <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Cost</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let i=index; let cost of item.OrderCost">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{item.OrderItems[i]}}</td>
+                                    <td>{{item.OrderQuantity[i]}}</td>
+                                    <td>{{cost}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <br>          
+        </div>
+    </div>
+    <ng-template #makeTheUserToOrder>
+        <div>
+            <br>
+            <div id="makeTheUserToOrderDiv">
+                <h3 style="font-size: 70px ;">🛍️</h3>
+            </div>
+            <br>
+            <div id="makeTheUserToOrderDiv">
+                <p id="startShoppingPara"> Current you dnt have any order history . Start ordering </p>
+                
+            </div>
+            <br>
+            <div id="makeTheUserToOrderDiv">
+                <button mat-raised-button color="warn" (click)="goToOrderPage()">Start Ordering</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

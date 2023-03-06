@@ -1,0 +1,121 @@
+#myAccount{
+    padding-top: 3%;
+    background-color: #FFD700;
+    background-size: cover;
+    margin-bottom: -2.5em;
+}
+
+#myaccountcomp{
+    background-color: #FFD700;
+    background-size: cover;
+}
+#myAccountHeader{
+    padding-left: 3%;
+    padding-top: 3%;
+}
+#myAccountHeaderTitle{
+    font-family: 'Acme', sans-serif;
+    font-size: 50px;
+}
+#userID{
+    padding-left: 5%;
+    padding-top:2%;
+}
+#userIDRes{
+    color:#FF8B00;
+
+}
+
+#userName{
+    padding-top:2%;
+}
+
+#userNameRes{
+    display: inline-block;
+    padding-bottom: 5px;
+    position: relative;
+    color:#FF8B00;
+}
+
+#userNameRes::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 2px solid black;
+}
+
+#userinforowtwo{
+    font-size: 25px;
+    padding-left: 45%;
+}
+
+#iconaddress{
+    font-size: 25px;
+    padding-left: 48%;
+}
+
+#orderButton{
+
+    display: flex;
+    justify-content: center;
+}
+
+#UserToLoginEmoji{
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    
+}
+
+#warningContent{
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+}
+#warningButton{
+    display: flex;
+    justify-content: center;
+}
+
+#logintxt{
+    position: relative;
+}
+
+#logintxt::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 3px solid red;
+}
+
+@media screen and (max-width : 800px)
+{
+    #myAccountHeader{
+        padding-left: 3%;
+        padding-top: 5%;
+    }
+
+    #secondrow{
+        padding-bottom: 1%;
+    }
+
+    #myAccountHeaderTitle{
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width : 1800px)
+{
+    #myAccountHeaderTitle{
+        font-size: 80px;
+    }
+    #userinfo{
+        padding-top: 3%;
+    }
+}

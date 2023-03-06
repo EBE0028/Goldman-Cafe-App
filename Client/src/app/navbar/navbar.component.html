@@ -1,0 +1,18 @@
+<div class="topnav mat-elevation-z4 " >
+    <a class="active" id="Logo" style="color:#CE7D00;" routerLink="">Goldman Cafe</a>
+    <div id="navbar-items">
+        <div *ngIf="this.Name != null || logedIn == true; else elseBlock" class="topnav-right" >       
+            <a  routerLink="/Order" >Order</a>
+            <a  routerLink="/Account" >Account</a>
+            <a  (click)="Logout()" style="cursor: pointer;">Logout</a>
+        </div>
+        <ng-template #elseBlock class="navbar-nav">
+          <div class="topnav-right">
+            <a routerLink="/Signup" id="nav-itm">Signup</a>
+              <a routerLink="/Login" id="nav-itm">Login</a>
+            </div>
+        </ng-template>
+    </div>
+
+</div>
+<router-outlet></router-outlet>

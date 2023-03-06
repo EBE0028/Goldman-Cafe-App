@@ -1,0 +1,75 @@
+
+#customerDetailsDiv{
+    text-align: center;
+    height:500px;
+    width: 30%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#loginImg{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#styleForm{
+    font-family: 'Alegreya Sans', sans-serif; 
+    color: black;
+    height: 400px;
+    text-align: center;
+}
+
+#headerLoginStyle{
+    font-family: 'EB Garamond', serif;
+}
+
+
+
+#subHeaderStyle{
+    text-align: left;
+    color:#0081C9;
+}
+
+#userLoginImg{
+    text-align: center;
+    font-size:70px;
+    color: #00337C;
+}
+
+#LoginImg{
+    padding:10px;
+}
+
+#LoginTitle{
+    padding:10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+
+#LoginDetails{
+    padding: 10px
+}
+
+@media screen and (max-width : 800px)
+{
+    #customerDetailsDiv{
+        width:80%
+    }
+}
+
+#loginDiv{
+    background-image: url("https://colorlib.com/etc/lf/Login_v4/images/bg-01.jpg");
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+

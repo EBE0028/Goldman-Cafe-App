@@ -1,0 +1,112 @@
+<div id="menuItem">
+    <br>
+    <h2 id="orderHeaderTitle"> Our Menu </h2> 
+    <br>
+    <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="🔍 Search" aria-label="Search" aria-describedby="search-addon" style="padding-left: 2%" [(ngModel)]="searchTerm" (keyup)="onSearch()" (blur)="onInputBlur()"/>
+    </div>
+    <br>
+    <div *ngIf="isSearched == false" >
+        <mat-tab-group>
+            <mat-tab label="Drink">
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4" *ngFor="let item of listOfDrinks" style="padding-bottom: 3%;" >
+                            <div class="card h-100 shadow-sm">
+                                <img src="{{ item.Image }}"  class="img-fluid bg-info">
+                                <div class="card-body d-flex flex-column">
+                                    <a >
+                                        <h6 class="text-uppercase" style="color: #CE7D00;font-size: 25px;font-family: 'Patua One', cursive;">{{item.Name}}</h6>
+                                    </a> 
+                                    <p style="font-size: 12px;">{{item.Description}}</p>
+                                    <h4 style="font-size: 18px; font-family: 'Patua One', cursive;">{{item.Cost | currency:'INR':'symbol-narrow'}}</h4>
+                                    <div class="btn-group mt-auto" style="color: #CE7D00;display:flex;justify-content: center;">
+                                        <button mat-fab extended color="primary" style="font-size :11px;padding-left:30px;padding-right:30px;margin-top:-2.5px" (click)="goToOrders(item.Name, item.Cost)">
+                                            <i class="fa-solid fa-cart-shopping" ></i>
+                                            Order now
+                                          </button>
+                                    </div>                                                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Cake"> 
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4" *ngFor="let item of listOfCakes" style="padding-bottom: 3%;">
+                            <div class="card h-100 shadow-sm" *ngIf="item.Category ==  categoryCake ">
+                                <img src="{{ item.Image }}"  class="img-fluid bg-info">
+                                <div class="card-body d-flex flex-column">
+                                    <a >
+                                        <h6 class="text-uppercase" style="color: #CE7D00;font-size: 25px;font-family: 'Patua One', cursive;">{{item.Name}}</h6>
+                                    </a> 
+                                    <p style="font-size: 12px;">{{item.Description}}</p>
+                                    <h4 style="font-size: 18px; font-family: 'Patua One', cursive;">{{item.Cost | currency:'INR':'symbol-narrow'}}</h4>
+                                    <div class="btn-group mt-auto" style="color: #CE7D00;display:flex;justify-content: center;">
+                                        <button mat-fab extended color="primary" style="font-size :11px;padding-left:30px;padding-right:30px;margin-top:-2.5px" (click)="goToOrders(item.Name, item.Cost)">
+                                            <i class="fa-solid fa-cart-shopping" ></i>
+                                            Order now
+                                          </button>
+                                    </div>                                                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Merchandise" >  
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4" *ngFor="let item of listOfMerchindes" style="padding-bottom: 3%;">
+                            <div class="card h-100 shadow-sm" *ngIf="item.Category ==  categoryMerchind">
+                                <img src="{{ item.Image }}"  class="img-fluid bg-info">
+                                <div class="card-body d-flex flex-column">
+                                    <a >
+                                        <h6 class="text-uppercase" style="color: #CE7D00;font-size: 25px;font-family: 'Patua One', cursive;">{{item.Name}}</h6>
+                                    </a> 
+                                    <p style="font-size: 12px;">{{item.Description}}</p>
+                                    <h4 style="font-size: 18px; font-family: 'Patua One', cursive;">{{item.Cost | currency:'INR':'symbol-narrow'}}</h4>
+                                    <div class="btn-group mt-auto" style="color: #CE7D00;display:flex;justify-content: center;">
+                                        <button mat-fab extended color="primary" style="font-size :11px;padding-left:30px;padding-right:30px;margin-top:-2.5px" (click)="goToOrders(item.Name, item.Cost)">
+                                            <i class="fa-solid fa-cart-shopping" ></i>
+                                            Order now
+                                          </button>
+                                    </div>                                                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>  
+    </div>  
+    <div *ngIf="isSearched == true">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let item of listOfsearchedItem" style="padding-bottom: 3%;" >
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{ item.Image }}"  class="img-fluid bg-info">
+                        <div class="card-body d-flex flex-column">
+                            <a >
+                                <h6 class="text-uppercase" style="color: #CE7D00;font-size: 25px;font-family: 'Patua One', cursive;">{{item.Name}}</h6>
+                            </a> 
+                            <p style="font-size: 12px;">{{item.Description}}</p>
+                            <h4 style="font-size: 18px; font-family: 'Patua One', cursive;">{{item.Cost | currency:'INR':'symbol-narrow'}}</h4>
+                            <div class="btn-group mt-auto" style="color: #CE7D00;display:flex;justify-content: center;">
+                                <button mat-fab extended color="primary" style="font-size :11px;padding-left:30px;padding-right:30px;margin-top:-2.5px" (click)="goToOrders(item.Name, item.Cost)">
+                                    <i class="fa-solid fa-cart-shopping" ></i>
+                                    Order now
+                                  </button>
+                            </div>                                                                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>

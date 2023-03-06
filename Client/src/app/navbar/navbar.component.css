@@ -1,0 +1,54 @@
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: black;
+}
+
+/* Add a color to the active/current link */
+#Logo {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right :0px;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+
+#navbar-items{
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+@media screen and (max-width : 800px)
+{
+  #Logo
+  {
+    font-size: 10px;
+    padding-left: 10px;
+  }
+}
+

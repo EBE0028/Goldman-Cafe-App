@@ -1,0 +1,52 @@
+#orderHeaderTitle{
+    font-family: 'Acme', sans-serif;
+    font-size: 40px;
+}
+
+#orderHistory{
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#headerOrder{
+    display: flex;
+    justify-content: center;
+}
+
+#makeTheUserToOrderDiv{
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+    font-family: 'Acme', sans-serif;
+    color: red;
+}
+
+#startShoppingPara{
+    font-size: 40px;
+}
+
+
+@media screen and (max-width : 800px)
+{
+    #orderHistory{
+        padding-top: 8%;
+    }
+
+    #orderHeaderTitle{
+        font-family: 'Acme', sans-serif;
+        font-size: 25px;
+    }
+
+    #makeTheUserToOrderDiv{
+        display: flex;
+        justify-content: center;
+        padding-top: 3%;
+        font-family: 'Acme', sans-serif;
+        color: red;
+    }
+
+    #startShoppingPara{
+        font-size: 20px;
+    }
+}

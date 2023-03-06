@@ -1,0 +1,28 @@
+<div id="loginDiv">
+  <div id="customerDetailsDiv" >
+    <mat-card>
+      <mat-card-content>
+          <form id="styleForm">
+            <div id="LoginImg">
+              <i class="fa-solid fa-user" id="userLoginImg"></i>
+            </div>
+            <div id="LoginTitle">
+              <mat-card-title> Welcome </mat-card-title>
+            </div>
+            <div class="form-group" id="LoginDetails">
+                <input type="number" class="form-control"   placeholder="User-ID" name="userID" #userID>
+            </div>
+            <div class="form-group" id="LoginDetails">
+                <input type="password" class="form-control"  placeholder="Password" name="Password" #password>
+            </div>
+              <a (click)="openDialog()"><mat-card-subtitle for="Password" id="subHeaderStyle" >Forgot password ?</mat-card-subtitle></a>
+              <br>
+              <button type="submit" class="btn btn-outline-success" (click)="CheckTheUserLoggedDetails(userID.value, password.value)" >Log in</button>
+          </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+

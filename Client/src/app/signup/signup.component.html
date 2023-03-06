@@ -1,0 +1,80 @@
+<div id="signupPage">
+    <br>
+    <div id="signUpDiv">
+        <mat-card>
+            <mat-card-content>
+                <i class="fa-solid fa-user-plus" id="signUpImg"></i>
+                <br>
+                <div>
+                    <h3 style="text-align: center;font-size: 30px;font-family: 'EB Garamond', serif;font-weight: bold; ">Signup</h3>
+                </div>
+                <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+                    <div>
+                        <label for="name" id="signUpLable">Your Name</label>
+                        <input type="text" id="inputTag" class="form-control" id="exampleInputEmail1"  aria-describedby="emailHelp" placeholder="Enter your name*" name="UserName" required [(ngModel)]="UserName">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="phone" id="signUpLable">Your phone number</label>
+                        <input type="tel" id="inputTag" class="form-control" id="exampleInputEmail1"  pattern="[6789]\d{9}" placeholder="Enter your phone number [ Only Indian number allowed ]*" name="UserPhone" required [(ngModel)]="UserPhone" maxlength="10">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="email" id="signUpLable">Your E-mail address</label>
+                        <input type="email" id="email"  class="form-control" aria-describedby="emailHelp" placeholder="Enter your E-mail [ Please enter only valid one ]*" required name="UserEmail" [(ngModel)]="UserEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="address" id="signUpLable">Your address</label>
+                        <input type="text" id="inputTag"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your address*" required name="UserAddress" [(ngModel)]="UserAddress">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="login" id="signUpLable">User Login</label>
+                        <input type="text" id="inputTag"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your user login* [ Minimum character lenght should be 8]" required name="UserLogin" [(ngModel)]="UserLogin" minlength="8">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="password" id="signUpLable">Password</label>
+                        <input type="password" id="inputTag"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your password* [ Minimum character lenght should be 8]" required name="UserPassword" [(ngModel)]="UserPassword" minlength="8">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="password" id="signUpLable"> Conform Password</label>
+                        <input type="password" id="inputTag"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Conform you password* [ Minimum character lenght should be 8]" required name="ConformPassword" [(ngModel)]="ConformPassword" minlength="8">
+                    </div>
+                    <br>
+                    <p id="signUpNote"> <u style="font-weight: bold;">Please Note :</u> Only after entering correct inputs create button will be enabled </p>
+                    <br>
+                    <div style="display:flex;justify-content: center;">
+                        <button [disabled]="!myForm.valid" type="submit"  class="btn btn-primary" [style.display]="createButton ? 'block' : 'none'">Create</button>
+                    </div>
+                </form>
+                <br>
+            </mat-card-content>
+          </mat-card>
+          <br>
+          <div>
+            <div [style.display]=" success ? 'block' : 'none'">
+                <mat-card>
+                    <mat-card-content>
+                        <h3 style="color:green;text-align: center;font-family: 'EB Garamond', serif;font-size: 20px;"> You have been sucessfully registered and you <span id="highlightTxt">USER-ID is {{totalNumberOfCustomers}}</span>. please proceed to login page and login with USER-ID and password </h3>
+                        <div  style="display:flex;justify-content: center;">
+                            <button mat-raised-button color="primary" (click)="routeToLogin()">Login</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>  
+        </div>
+        <div [style.display]=" failure ? 'block' : 'none'">
+            <mat-card>
+                <mat-card-content>
+                    <h3 style="color:red;text-align: center;font-family: 'EB Garamond', serif;font-size: 20px;"> OOPS ! Something went wrong please click the below button </h3>
+                    <div style="display:flex;justify-content: center;">
+                        <button mat-raised-button color="warn" (click)="refresh()" >TryAgain</button>
+                    </div> 
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div id="myAccount">
+    <div *ngIf="this.username !=null;else makeUserToLogin">
+        <div>
+            <div id="myAccountHeader">
+                <h1 id="myAccountHeaderTitle">My Account</h1>
+            </div>
+            <br>
+            <div id="myaccountcomp">
+                <br>
+                <div class="container" id="userinfo">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <mat-card>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <h2 id="userID">Your UserID : <span id="userIDRes">{{this.id}}</span></h2>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <h2 id="userName">Your Username : <span id="userNameRes">{{this.username}}</span></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <br>
+                    <div  class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12" id="secondrow">
+                            <mat-card>
+                                <mat-card-header ><i class="fa-solid fa-lock" id="userinforowtwo"></i></mat-card-header>
+                                <br>
+                                <mat-card-content style="text-align: center; font-size: 15px;">Password : {{this.password}}</mat-card-content>
+                            </mat-card>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12" id="secondrow">
+                            <mat-card id="test">
+                                <mat-card-header ><i class="fa-solid fa-phone-volume" id="userinforowtwo"></i></mat-card-header>
+                                <br>
+                                <mat-card-content style="text-align: center;font-size: 15px;">{{this.phone}}</mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <br>
+                    <div  class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12" id="secondrow">
+                            <mat-card>
+                                <mat-card-header><i class="fa-sharp fa-solid fa-location-dot" id="iconaddress"></i></mat-card-header>
+                                <br>
+                                <mat-card-content style="text-align: center;font-size: 15px;">{{this.address}}</mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div id="orderButton">
+                    <div style="padding-right: 3%;">
+                        <button mat-fab extended color="primary" (click)="goToOrders()">
+                            <i class="fa-solid fa-cart-shopping" ></i>
+                            View my orders
+                        </button>
+                    </div>
+                    <br>
+                    <div>
+                        <button mat-fab extended color="warn" (click)="goToPasswordChangePage()">
+                            Change password
+                        </button>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <ng-template #makeUserToLogin>
+        <div id="UserToLoginEmoji">
+            <h1 style="font-size: 100px;">🤔</h1>
+        </div>
+        <br>
+        <br>
+        <div >
+            <div id="warningContent">
+                <h2 style="font-family: 'Acme', sans-serif;font-size:25px">OOPS!. Seems like you need to <span id="logintxt">LOGIN</span> first to continue . Click the button to login<br></h2>
+            </div>
+            <br>
+            <div id="warningButton">
+                <button mat-fab extended color="warn" routerLink="/Login">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Login
+                  </button>
+            </div>
+        </div>
+    </ng-template>
+</div>
+

@@ -1,0 +1,56 @@
+#signupPage{
+    background-image: url("https://colorlib.com/etc/lf/Login_v4/images/bg-01.jpg");
+    width: 100%;
+    min-height: 200vh;
+    flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top:3%;
+    margin-bottom: -2.3em;
+
+}
+
+#signUpImg{
+    text-align: center;
+    font-size:40px;
+    color: #00337C;
+    display: flex;
+    justify-content: center;
+}
+
+#inputTag{
+    width: 800px;
+}
+
+#signUpDiv{
+    height:500px;
+    width: 50%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#signUpLable{
+    font-family: 'Alegreya Sans', sans-serif; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#signUpNote{
+    font-style: italic;
+
+}
+
+#highlightTxt{
+    position: relative;
+}
+
+#highlightTxt::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 25%;
+    border-bottom: 3px solid red;
+}

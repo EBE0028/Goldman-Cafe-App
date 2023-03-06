@@ -1,0 +1,82 @@
+<div>
+    <br>
+    <div class="homeSession">
+        <br>
+        <div id="recommendProduct">
+            <div id="recommenddetailscenter">
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6" id="recommendedinfdiv">
+                            <img src={{this.image}} id="recommendedImg"/>
+                        </div>
+                        <div class="col-lg-6 col-sm-6" id="recommendedinfo">
+                            <div id="recominfo">
+                                <h2 id="RecProductName">{{this.name}}</h2>
+                                <h3 id="RecProductPrice">price : ₹ {{this.price}}</h3>
+                            </div>
+                            <mat-card id="companycard">
+                                <mat-card-content id="companyContent">Our iconic Signature Blends are slow roasted for the perfect balance of rich flavour and smooth taste. We guarantee you the freshest taste and finest ingredients, every time. Check out our full range of drinks, snacks and meals and discover your favourites.</mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div id="categoryPortion">
+            <h2 id="categoryTitle">Handcrafted Curations</h2>
+            <div class="container" id="CategoryList">
+                <div class="row" >
+                    <div class="col-lg-2 col-md-6 col-sm-6" id="categoryProduct">
+                        <img src="https://starbucks-cdn-01.s3.ap-south-1.amazonaws.com/Category/Small/Bestseller.jpg" id="categoryImg" (click)="NavigateToMenuItemPage()" />       
+                        <h3 id="categorySubHead">Milkshake</h3>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6" id="categoryProduct">
+                        <img src="https://starbucks-cdn-01.s3.ap-south-1.amazonaws.com/Category/Small/Drinks.jpg" id="categoryImg" (click)="NavigateToMenuItemPage()" />
+                        <h3 id="categorySubHead">Drinks</h3>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6" id="categoryProduct">
+                        <img src="https://starbucks-cdn-01.s3.ap-south-1.amazonaws.com/Category/Small/Food.jpg" id="categoryImg" (click)="NavigateToMenuItemPage()" />
+                        <h3 id="categorySubHead">Snacks</h3>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6" id="categoryProduct">
+                        <img src="https://starbucks-cdn-01.s3.ap-south-1.amazonaws.com/Category/Small/Merchandise.jpg" id="categoryImg" (click)="NavigateToMenuItemPage()" />
+                        <h3 id="categorySubHead">Merchandise</h3>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6" id="categoryProduct">
+                        <img src="https://starbucks-cdn-01.s3.ap-south-1.amazonaws.com/Category/Small/CoffeeAtHome.jpg" id="categoryImg" (click)="NavigateToMenuItemPage()" />
+                        <h3 id="categorySubHead">Bestseller</h3>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6" id="categoryProduct">
+                        <img src="https://starbucks-cdn-01.s3.ap-south-1.amazonaws.com/Category/Small/ReadyToEat.jpg" id="categoryImg" (click)="NavigateToMenuItemPage()" />
+                        <h3 id="categorySubHead">Chocolates</h3>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <br>
+        <div class="container" style=" padding: 0; width: 100%;">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm12" style="display:flex;justify-content: center;background-color: #FFD700;padding: 0;">
+                    <div class="aboutUs" >
+                        <h3 style="font-family: 'Satisfy', cursive;font-size: 23px;">Satisfy Cravings</h3>
+                        <p style="font-size: 25px;text-align: left;text-justify: inter-word;line-height: 0.9em;">We pride ourselves on bringing the best coffee to the heart of the City.  We also offer a daily assortment of fresh baked goods and our Award Winning <span id="underlineTxt"> Chocolate Chip Cookies</span>. </p>
+                        <div style="display:flex;justify-content: center;padding-top: 2%;">
+                            <button mat-fab extended color="warn" style="font-size: 11px;padding: 1px 15px;" [routerLink]="['\MenuItems']">
+                                <mat-icon>favorite</mat-icon>
+                                Menu Items
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm12" style="padding: 0;">
+                    <img src="https://themes.muffingroup.com/be/cafe3/wp-content/uploads/2020/02/cafe3-wrapbg1.jpg" height="500px" width="100%"/>
+                </div>
+            </div>
+        </div>
+        <br>
+        <app-footer></app-footer>
+    </div>
+</div>

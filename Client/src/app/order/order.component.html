@@ -1,0 +1,131 @@
+<div>
+  <div style="padding-top: 3%;">
+    <br>
+    <div *ngIf="this.username !=null;else makeUserToLogin">
+        <div id="orderNavBarDiv">
+            <mat-card id="navBarForOrder">   
+                <div class="container">
+                    <div class="row" id="navBarItems">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <h1 id="orderHeaderTitle">Let's start ordering  </h1>
+                        </div >
+                        <div class="col-lg-6 col-md-6 col-sm-6" id="addbutton" [hidden]="blockTheCartFunc">
+                            <button mat-fab extended color="warn"  (click)="deleteAll()">
+                                Delete All
+                              </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button mat-fab extended color="warn" (click)="deleteLast()">
+                                Delete
+                              </button>
+                              <h3 style="padding-top: 2%;font-size: 15px;font-family: 'Acme', sans-serif; padding-left: 4%;" id="logintxt">Total Bill Amount : {{totalBillCost}}</h3>
+                        </div>
+                    </div>
+                </div>
+              </mat-card>
+        </div>
+        <br>
+        <div id="orderNavBarDiv" [hidden]="blockTheCartFunc">
+            <mat-card>
+                <mat-card-content>
+                    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-lg-4 col-md-12 col-sm-12" style="padding-top: 1%;display:flex;">
+                              <mat-form-field appearance="fill">
+                                <mat-label>Favorite food</mat-label>
+                                <mat-select name="name" [(ngModel)]="name" required (ngModelChange)="onNameChanged()">
+                                  <mat-option *ngFor="let item of listOfMenuItems" [value]="item.Name"  >
+                                    {{item.Name}}
+                                  </mat-option>
+                                </mat-select>
+                                <br>
+                              </mat-form-field>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12" style="padding-top: 1%;display:flex;justify-content: center;">
+                              <mat-form-field>
+                                <input matInput type="number"  id="quantity" placeholder="Enter quantity"  min="1" max="20"  name="quantity" required [(ngModel)]="quantity" (ngModelChange)="onNameChanged()">
+                                <mat-icon matSuffix (click)="increaseOnClick()">keyboard_arrow_up</mat-icon>
+                                <mat-icon matSuffix (click)="decreaseOnClick()">keyboard_arrow_down</mat-icon>
+                              </mat-form-field>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12" style="padding-top: 2%;">
+                              <h1 style="text-align: center;font-family: 'Acme', sans-serif;"> Cost : {{currentCostOfItem}}</h1>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <div style="padding-left: 45%">
+                          <button type="submit" mat-fab extended color="primary" matBadge={{this.add}} matBadgeColor="primary" [disabled]="!myForm.valid" >
+                            <i class="fa-solid fa-cart-plus"></i>
+                            Add
+                          </button>
+                        </div>
+                      </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <br>
+        <div id="orderNavBarDiv" *ngIf = "listOfItemsName.length !=0; else addItemToCart">
+          <h2 style="font-family: 'Acme', sans-serif;font-size: 30px;padding-left: 1%;">Your Cart</h2>
+            <table class="table table-striped table-dark mat-elevation-z12">
+                <thead>
+                  <tr>
+                    <th scope="col">Menu Item</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Cost</th>
+                  </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor=" let i=index;let quantityOfProduct of listOfItemsQuantity; ">
+                      <td>{{listOfItemsName[i]}}</td>
+                      <td>{{quantityOfProduct}}</td>
+                      <td>{{listOfItemsCost[i]}}</td>
+                    </tr>
+                  </tbody>              
+              </table> 
+              <br>
+              <div id="orderNavBarDiv">
+                <app-payment [itemPurchased]="totalBillCost" [listOfItemName]="listOfItemsName" [listOfItemCost]="listOfItemsCost" [listOfItemQuantity]="listOfItemsQuantity" (blockTheAddtoCartButton)="onDataPassed($event)"></app-payment>
+              </div>
+        </div>
+        <ng-template #addItemToCart>
+            <div id="orderNavBarDiv">
+                <br>
+                <div id="emoji">
+                    <h1 style="text-align: center;font-size: 50px;">😎</h1>
+                </div>
+                <br>
+                <div>
+                    <h2 style="text-align: center;font-size: 30px;font-family: 'Acme', sans-serif;">Start ordering you favourite menu item. ⌛ We are waiting 🤔</h2>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+    <ng-template #makeUserToLogin>
+        <div id="UserToLoginEmoji">
+            <h1 style="font-size: 100px;">🤔</h1>
+        </div>
+        <br>
+        <br>
+        <div >
+            <div id="warningContent">
+                <h2 style="font-family: 'Acme', sans-serif;font-size:25px">OOPS!. Seems like you need to <span id="logintxt">LOGIN</span> first to continue . Click the button to login<br></h2>
+            </div>
+            <br>
+            <div id="warningButton">
+                <button mat-fab extended color="warn" routerLink="/Login">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Login
+                  </button>
+            </div>
+        </div>
+    </ng-template>
+    <br>  
+  </div>
+</div>
+
+
+
+
+
+
+
